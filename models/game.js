@@ -5,19 +5,21 @@ function game() {
   this.guessesLeft = 8;
   this.lettersRight = [];
   this.lettersWrong = [];
+  this.finished = false;
+}
 
-  this.maskedPhrase = function() {
-    mask = '';
-    for (let i = 0; i < this.phrase.length; i++ ) {
-      let letter = this.phrase[i];
-      if (this.lettersRight.indexOf(letter) != -1 || letter === ' ') {
-        mask += letter;
-      } else {
-        mask += '_';
-      }
-    };
-    return mask;
-  }
+function maskedPhrase (phrase, lettersRight) {
+  mask = '';
+  for (let i = 0; i < phrase.length; i++ ) {
+    let letter = phrase[i];
+    if (lettersRight.indexOf(letter) != -1 || letter === ' ') {
+      mask += letter;
+    } else {
+      mask += '_';
+    }
+  };
+  return mask;
 }
 
 module.exports = game;
+module.exports.maskedPhrase = maskedPhrase;

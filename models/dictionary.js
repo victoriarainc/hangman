@@ -15,7 +15,7 @@ let dictionary = [
 
 function getPhrase() {
   // TODO: Make me random!
-  return 'some word here' // Make this return a random word
+  return dictionary[Math.floor(Math.random()*dictionary.length)];
 }
 
 module.exports.getPhrase = getPhrase;

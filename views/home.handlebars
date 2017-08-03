@@ -7,11 +7,15 @@
   </head>
   <body>
     <h1>Dirty Hangman</h1>
-    <form class="" action="/guess" method="post">
-      <input type="text" name="userGuess" value="">
-      <button type="button" name="button">Make a guess!</button>
+    <div id="phrase">
+      {{ maskedPhrase }}
+    </div>
+    <form id="inputForm">
+      <input id="inputField" type="text" name="userGuess" value="" />
+      <input type="submit" value="Make a guess!" />
     </form>
-    <p>{{}} guesses left!</p>
+    <p id="wrongLetters">{{ game.lettersWrong }}</p>
+    <p><span id="guesses">{{ game.guessesLeft }}</span> guesses left!</p>
     <script type="text/javascript" src="js/frontend.js"></script>
   </body>
 </html>
