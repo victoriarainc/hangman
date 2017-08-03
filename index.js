@@ -21,6 +21,9 @@ app.engine('handlebars', handlebars());
 app.set('views', './views');
 app.set('view engine', 'handlebars');
 
+// for express-validator
+app.use(expressValidator());
+
 // for express-session
 app.use(
   session({
@@ -31,15 +34,8 @@ app.use(
   })
 );
 
-// for express-validator
-app.use(expressValidator());
-
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-
-// Handlebar helpers
-
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // PATHWAYS
 app.get('/', function(req, res) {
