@@ -5,10 +5,23 @@ const game = require('../models/game');
 
 routes.post('/', function(req, res) {
 
-  console.log(req.headers);
-  console.log(req.body);
+  if (!req.session.active) {
+    console.log('No active game!');
+    res.redirect('/');
+    return
+  }
+  let state = req.session.active;
+  let userGuess = req.body.userGuess;
 
-  res.send(JSON.stringify({'data': 'Blah'}));
+  if (state.phrase.indexOf(userGuess) != -1) {
+    if (state.lettersRight.indexOf(userGuess) === -1) {
+        state.lettersRight.push(userGuess)
+    }
+  } else {
+    state.lettersWrong.push(userGuess);
+    state.guessesLeft -= 1;
+  }
+  res.redirect('/');
 });
 
 module.exports = routes;

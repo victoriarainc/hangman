@@ -35,7 +35,7 @@ app.use(
 );
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // PATHWAYS
 app.get('/', function(req, res) {
@@ -43,10 +43,10 @@ app.get('/', function(req, res) {
   // If not, create a new game and save to the session.
   if (!req.session.active) {
     req.session.active = new game();
+    console.log('New game created.  The phrase is: ' + req.session.active.phrase);
   }
 
   let active = req.session.active;
-  console.log(active);
   // Render home page with the users current game state
   res.render(
     'home',

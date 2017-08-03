@@ -10,12 +10,11 @@
     <div id="phrase">
       {{ maskedPhrase }}
     </div>
-    <form id="inputForm">
+    <form id="inputForm" action="/guess" method="POST">
       <input id="inputField" type="text" name="userGuess" value="" />
       <input type="submit" value="Make a guess!" />
     </form>
     <p id="wrongLetters">{{ game.lettersWrong }}</p>
     <p><span id="guesses">{{ game.guessesLeft }}</span> guesses left!</p>
-    <script type="text/javascript" src="js/frontend.js"></script>
   </body>
 </html>
