@@ -42,6 +42,7 @@ app.get('/', function(req, res) {
   // Does this user already have a game active?
   // If not, create a new game and save to the session.
   if (!req.session.active) {
+    //new is a way to call on a function 'again'
     req.session.active = new game();
     console.log('New game created.  The phrase is: ' + req.session.active.phrase);
   }

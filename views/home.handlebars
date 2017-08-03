@@ -12,9 +12,9 @@
     </div>
     <form id="inputForm" action="/guess" method="POST">
       <input id="inputField" type="text" name="userGuess" value="" />
-      <input type="submit" value="Make a guess!" />
+      <input id="button" type="submit" value="Make a guess!" />
     </form>
-    <p id="wrongLetters">{{ game.lettersWrong }}</p>
-    <p><span id="guesses">{{ game.guessesLeft }}</span> guesses left!</p>
+    <p id="wrongLetters">Wrong: {{ game.lettersWrong }}</p>
+    <p id="guessesLeft"><span id="guesses">{{ game.guessesLeft }}</span> guesses left!</p>
   </body>
 </html>

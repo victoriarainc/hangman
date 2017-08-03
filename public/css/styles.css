@@ -1,4 +1,26 @@
 body {
-  background-color: rgb(189, 232, 111);
+  background-color: rgb(230, 232, 222);
   font-family: monospace;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  font-size: 25px
+}
+
+h1 {
+  font-size: 32px;
+  margin: 10%;
+}
+
+#phrase {
+margin: 10% 0;
+}
+
+#wrongLetters {
+  color: rgb(247, 78, 0);
+}
+
+#guessesLeft {
+  color: red;
+  font-weight: bolder;
 }
