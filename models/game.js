@@ -35,4 +35,3 @@ function maskedPhrase (phrase, lettersRight) {
 //EXPORTS
 module.exports = game;
 module.exports.maskedPhrase = maskedPhrase;
-module.exports.guessLetter = guessLetter;

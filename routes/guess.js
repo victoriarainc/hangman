@@ -5,12 +5,12 @@ const routes = express.Router();
 const game = require('../models/game');
 
 //ROUTE
-routes.post('/', function(req, res) {
-  
+routes.post('/guess', function(req, res) {
+
+  // for active session -----------
   //if there is no session redirect / to start a new game
   if (!req.session.active) {
     res.redirect('/');
-    return
   }
 
   //state is the active session from the moment a user

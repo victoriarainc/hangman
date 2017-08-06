@@ -59,7 +59,7 @@ app.get('/', function(req, res) {
 });
 
 // Handle routes to /guess
-app.use('/guess', guessRoutes);
+app.use('/', guessRoutes);
 
 
 // This is what the client (browser) will do

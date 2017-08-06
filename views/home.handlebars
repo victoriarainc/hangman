@@ -12,6 +12,7 @@
     </div>
     <form id="inputForm" action="/guess" method="POST">
       <input id="inputField" type="text" name="userGuess" value="" />
+      <p id ="error">{{error}}</p>
       <input id="button" type="submit" value="Make a guess!" />
     </form>
     <p id="wrongLetters">Wrong: {{ game.lettersWrong }}</p>

@@ -11,10 +11,7 @@ let dictionary = [
   'toddler hands'
 ]
 
-// Handle spaces
-
 function getPhrase() {
-  // TODO: Make me random!
   return dictionary[Math.floor(Math.random()*dictionary.length)];
 }
 
