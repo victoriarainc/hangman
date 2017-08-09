@@ -58,6 +58,11 @@ app.get('/', function(req, res) {
   );
 });
 
+app.get('/reset', function(req, res) {
+  req.session.active = undefined;
+  res.redirect('/');
+});
+
 // Handle routes to /guess
 app.use('/', guessRoutes);
 

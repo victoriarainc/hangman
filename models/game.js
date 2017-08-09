@@ -10,6 +10,7 @@ function game() {
   this.lettersRight = [];
   this.lettersWrong = [];
   this.finished = false;
+  this.winner = false;
 }
 
   //the display is a function that consists of the phrase pulled

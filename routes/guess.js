@@ -30,6 +30,16 @@ routes.post('/guess', function(req, res) {
     state.lettersWrong.push(userGuess);
     state.guessesLeft -= 1;
   }
+  if (state.guessesLeft <= 0) {
+    state.finished = true;
+  }
+
+  mask = game.maskedPhrase(state.phrase, state.lettersRight);
+  if (mask.indexOf('_') === -1) {
+    state.finished = true;
+    state.winner = true;
+  }
+
   res.redirect('/');
 });
 
